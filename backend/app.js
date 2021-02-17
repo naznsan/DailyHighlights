@@ -1,3 +1,6 @@
+if (process.env.NODE_ENV !== 'production') {
+  require('dotenv').config();
+}
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
@@ -9,7 +12,7 @@ const port = process.env.PORT || 3000;
 
 // Connect to MongoDB Atlas
 const client = mongoose.connect(
-  'mongodb+srv://naznsan:bWcbJSQ9fPYf2tYg@main.15kjw.mongodb.net/Main?retryWrites=true&w=majority',
+  `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@main.15kjw.mongodb.net/Main?retryWrites=true&w=majority`,
   {
     useNewUrlParser: true,
     useUnifiedTopology: true
