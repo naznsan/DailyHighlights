@@ -1,6 +1,8 @@
 if (process.env.NODE_ENV !== 'production') {
   require('dotenv').config();
 }
+const http = require('http');
+const cors = require('cors');
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
@@ -8,7 +10,8 @@ const postQueries = require('./queries/postQueries');
 const app = express();
 const port = process.env.PORT || 3000;
 
-// TODO: Install cors
+// TODO: Change cors address port if needed
+app.use(cors({origin: 'https://localhost:3001'}))
 
 // Connect to MongoDB Atlas
 const client = mongoose.connect(
