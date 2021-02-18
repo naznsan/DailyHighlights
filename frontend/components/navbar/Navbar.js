@@ -5,10 +5,10 @@ import styles from './Navbar.module.css';
 const Navbar = () => {
   return (
     <header className={styles.navbar}>
-      <Link href="/">
+      <Link href='/'>
         <a><h1>Daily Highlights</h1></a>
       </Link>
-      <Link href="/LogIn">
+      <Link href='/LogIn'>
         <a><p>Log In</p></a>
       </Link>
     </header>
