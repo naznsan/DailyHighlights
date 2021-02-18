@@ -8,10 +8,10 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const postQueries = require('./queries/postQueries');
 const app = express();
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3001;
 
 // TODO: Change cors address port if needed
-app.use(cors({origin: 'https://localhost:3001'}))
+app.use(cors({origin: 'https://localhost:3000'}))
 
 // Connect to MongoDB Atlas
 const client = mongoose.connect(
